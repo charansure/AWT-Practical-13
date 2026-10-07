@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# environment files (secrets!) - never commit these
+.env
+.env.local
+.env.*.local
+
+# build output
+.next/
+dist/
+out/
+
+# logs / OS
+*.log
+.DS_Store

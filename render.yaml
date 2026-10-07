@@ -1,0 +1,19 @@
+# Render Blueprint - deploys the backend API as a free Web Service
+services:
+  - type: web
+    name: task-board-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false # you paste the MongoDB Atlas string in the Render dashboard
+      - key: CLIENT_URLS
+        sync: false # you paste your Vercel URL in the Render dashboard
